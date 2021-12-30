@@ -2,7 +2,7 @@ defmodule Wabanex.Training do
   use Ecto.Schema
   import Ecto.Changeset
 
-  alias Wabanex.{User, Exercice}
+  alias Wabanex.{Exercise, User}
 
   @fields [:end_date, :start_date, :user_id]
 
@@ -14,7 +14,7 @@ defmodule Wabanex.Training do
     field :end_date, :date
 
     belongs_to :user, User
-    has_many :exercices, Exercice
+    has_many :exercises, Exercise
 
     timestamps()
   end
@@ -23,6 +23,6 @@ defmodule Wabanex.Training do
     %__MODULE__{}
     |> cast(params, @fields)
     |> validate_required(@fields)
-    |> cast_assoc(:exercices)
+    |> cast_assoc(:exercises)
   end
 end

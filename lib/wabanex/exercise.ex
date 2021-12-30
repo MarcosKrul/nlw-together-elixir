@@ -1,4 +1,4 @@
-defmodule Wabanex.Exercice do
+defmodule Wabanex.Exercise do
   use Ecto.Schema
   import Ecto.Changeset
 
@@ -9,7 +9,7 @@ defmodule Wabanex.Exercice do
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id
 
-  schema "exercices" do
+  schema "exercises" do
     field :name, :string
     field :protocol_description, :string
     field :repetitions, :string
